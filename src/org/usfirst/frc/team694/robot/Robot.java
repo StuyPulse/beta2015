@@ -77,20 +77,22 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putNumber("Left Joystick X", leftStick.getX());
     	SmartDashboard.putNumber("Left Joystick Y", leftStick.getY());
     	SmartDashboard.putNumber("Left Joystick Z", leftStick.getZ());
-    	SmartDashboard.putNumber("Left Joystick Throttle", leftStick.getThrottle());
-    	SmartDashboard.putNumber("Left Joystick Twist", leftStick.getTwist());
 
     	SmartDashboard.putNumber("Right Joystick X", rightStick.getX());
     	SmartDashboard.putNumber("Right Joystick Y", rightStick.getY());
     	SmartDashboard.putNumber("Right Joystick Z", rightStick.getZ());
-    	SmartDashboard.putNumber("Right Joystick Throttle", rightStick.getThrottle());
-    	SmartDashboard.putNumber("Right Joystick Twist", rightStick.getTwist());
+    	
+    	//SmartDashboard.putBoolean("Left Arm Value", arm.getLeftArm());
+    	//SmartDashboard.putBoolean("Right Arm Value", arm.getRightArm());
+
     	
     	/* Print out Amps for each channel in PDP
     	 * There are 16 channels, zero-based */
-    	for (int i=0; i<15; i++) {
+    	for (int i=0; i<16; i++) {
     		SmartDashboard.putNumber("PDP Channel " + i + " Amps", pdp.getCurrent(i));
     	}
+    	SmartDashboard.putNumber("PDP Temperature", pdp.getTemperature());
+    	SmartDashboard.putNumber("PDP Voltage", pdp.getVoltage());
     }
     
 }
