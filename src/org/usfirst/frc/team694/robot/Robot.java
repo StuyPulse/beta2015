@@ -15,10 +15,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
 	
-	Drivetrain drivetrain;
 	PowerDistributionPanel pdp;
 	Joystick leftStick = new Joystick(Constants.LEFT_JOYSTICK);
 	Joystick rightStick = new Joystick(Constants.RIGHT_JOYSTICK);
+
+	Drivetrain drivetrain;
+	Arm arm;
+
 	
     /**
      * This function is run when the robot is first started up and should be
@@ -26,6 +29,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
     	drivetrain = Drivetrain.getInstance();
+    	arm = Arm.getInstance();
     	pdp = new PowerDistributionPanel();
     }
     
@@ -54,6 +58,7 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         drivetrain.tankDrive(leftStick, rightStick);
+        arm.armControl(leftStick, rightStick);
         updateDashboard();
     }
     
@@ -71,8 +76,15 @@ public class Robot extends IterativeRobot {
     private void updateDashboard() {
     	SmartDashboard.putNumber("Left Joystick X", leftStick.getX());
     	SmartDashboard.putNumber("Left Joystick Y", leftStick.getY());
+    	SmartDashboard.putNumber("Left Joystick Z", leftStick.getZ());
+    	SmartDashboard.putNumber("Left Joystick Throttle", leftStick.getThrottle());
+    	SmartDashboard.putNumber("Left Joystick Twist", leftStick.getTwist());
+
     	SmartDashboard.putNumber("Right Joystick X", rightStick.getX());
     	SmartDashboard.putNumber("Right Joystick Y", rightStick.getY());
+    	SmartDashboard.putNumber("Right Joystick Z", rightStick.getZ());
+    	SmartDashboard.putNumber("Right Joystick Throttle", rightStick.getThrottle());
+    	SmartDashboard.putNumber("Right Joystick Twist", rightStick.getTwist());
     	
     	/* Print out Amps for each channel in PDP
     	 * There are 16 channels, zero-based */
