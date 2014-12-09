@@ -38,5 +38,14 @@ public class Paddle extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    
+    public void flipPaddle() {
+    	servoPaddle.set(0);
+    }
+    
+    public void unflipPaddle() {
+    	servoPaddle.set(1);
+    }
+    
 }
 

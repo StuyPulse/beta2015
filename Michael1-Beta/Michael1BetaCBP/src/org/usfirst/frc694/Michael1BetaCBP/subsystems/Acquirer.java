@@ -38,5 +38,26 @@ public class Acquirer extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    
+    public void acquire() {
+    	acquirerMotorController.set(1);
+    }
+    
+    public void acquirerReverse() {
+    	acquirerMotorController.set(-1);
+    }
+    
+    public void setRollers(double value) {
+    	acquirerMotorController.set(value);
+    }
+    
+    public double getRollerSpeed() {
+    	return acquirerMotorController.get();
+    }
+    
+    public void stop() {
+    	acquirerMotorController.set(0);
+    }
+    
 }
 
