@@ -63,6 +63,11 @@ public class RobotMap {
         drivetrainRobotDrive.setSensitivity(0.5);
         drivetrainRobotDrive.setMaxOutput(1.0);
         
+        drivetrainRobotDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
+        drivetrainRobotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+        drivetrainRobotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+        drivetrainRobotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
+        
         shooterShooterMotorController = new Talon(2);
         //LiveWindow.addActuator("Shooter", "Shooter Motor Controller", (VictorSP) shooterShooterMotorController);
         
