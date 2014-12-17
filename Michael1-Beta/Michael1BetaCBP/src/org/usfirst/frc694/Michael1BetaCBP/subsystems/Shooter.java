@@ -33,10 +33,12 @@ public class Shooter extends Subsystem {
     }
     
     public void vomit() {
+    	shooterSpike.set(Relay.Value.kOn);
     	shooterSpike.setDirection(Relay.Direction.kForward);
     }
     
     public void ingest() {
+    	shooterSpike.set(Relay.Value.kOn);
     	shooterSpike.setDirection(Relay.Direction.kReverse);
     }
     

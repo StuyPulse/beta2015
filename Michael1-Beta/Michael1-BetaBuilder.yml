@@ -141,6 +141,12 @@ Children:
         name: Default Command, type: Command, validators: null, value: None}
     Base: Subsystem
     Name: Shooter
+  - Children: []
+    Properties:
+      Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Default Command, type: Command, validators: null, value: None}
+    Base: Subsystem
+    Name: Camera
   Properties: {}
   Base: Subsystems
   Name: Subsystems
@@ -370,12 +376,21 @@ Children:
         name: Button on SmartDashboard, validators: null, value: false}
     Base: Command
     Name: Drivetrain Drive
+  - Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Camera}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: false}
+    Base: Command
+    Name: Get Image
   Properties: {}
   Base: Commands
   Name: Commands
 Properties:
-  Eclipse Workspace: !!robotbuilder.data.properties.FileProperty {default: /Users/Danny/workspace,
-    extension: null, folder: true, name: Eclipse Workspace, validators: null, value: /Users/Danny/Programming/beta2015/Michael1-Beta}
+  Eclipse Workspace: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\No
+      Knowey\workspace', extension: null, folder: true, name: Eclipse Workspace, validators: null,
+    value: /Users/Danny/Programming/beta2015/Michael1-Beta}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
   Java Package: !!robotbuilder.data.properties.StringProperty {default: org.usfirst.frc0000,
