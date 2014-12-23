@@ -20,4 +20,11 @@ public class Constants {
 	/* RELAYS */
 	public static final int SHOOTER_CHANNEL = 0;
 	
+	/* CAN IDS */
+	public static final int PDP_ID = 0;
+	public static final int PCM_ID = 2;
+	
+	/* PCM Channels */
+	public static final int PUNCHER_CHANNEL = 1;
+	
 }
